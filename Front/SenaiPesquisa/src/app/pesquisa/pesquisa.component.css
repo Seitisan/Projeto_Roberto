@@ -1,0 +1,176 @@
+.container {
+    width: 100%;
+    max-height: 100%;
+}
+
+.cabecalho {
+    font-size: 1.5em;
+}
+
+.container-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.ajuste-left {
+    margin-left: 3%;
+}
+
+.ajuste-left-4{
+    margin-left: 4%;
+}
+
+.ajuste-right-3{
+    margin-right: 3%;
+}
+
+.ajuste-right {
+    margin-right: 6%;
+}
+
+.ajuste-left-segunda-parte {
+    margin-left: 8%;
+}
+
+.ajuste-right-segunda-parte {
+    margin-right: 7%;
+}
+
+.div-flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-left: auto;
+}
+
+.adaptation-lbl {
+    cursor: pointer;
+}
+
+.proximo-btn {
+    margin-left: auto;
+}
+
+.formulario-primeira-parte {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-primeira-parte-primeira-li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formulario-segunda-parte-primeira-li {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-right: 1%;
+    margin-left: auto;
+}
+
+.formulario-last-parte-segunda-li {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1%;
+}
+
+.formulario-last-parte-primeira-li {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 9%;
+}
+
+.formulario-primeira-parte-segunda-li-primeira-div {
+    display: flex;
+    justify-content: space-between;
+    width: 19%;
+}
+
+.formulario-segunda-parte-segunda-li-primeira-div {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    margin-left: -2.5%;
+}
+
+.formulario-segunda-parte-terceira-li-primeira-div {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-left: -4%;
+}
+
+.formulario-primeira-parte-terceira-li-segunda-div {
+    width: 52%;
+}
+
+.formulario-primeira-parte-segunda-li-terceira-div {
+    display: flex;
+    justify-content: space-between;
+    width: 23%;
+}
+
+.formulario-primeira-parte-segunda-li  {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formulario-primeira-parte-terceira-li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.formulario-primeira-parte-terceira-li-primeira-div {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-top: 0.65%;
+}
+
+.formulario-primeira-parte-terceira-li-terceira-div {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin-top: 0.65%;
+}
+
+.formulario-primeira-parte-terceira-li-primeira-div-primeiro-input {
+    margin-left: 3%;
+}
+
+.formulario-primeira-parte-terceira-li-primeira-div-terceiro-input {
+    margin-right: 4%;
+}
+
+.formulario-primeira-parte-terceira-li-terceira-div-primeiro-input {
+    margin-left: 5%;
+}
+
+.formulario-primeira-parte-terceira-li-terceira-div-segundo-input {
+    margin-left: 3%;
+}
+
+.formulario-primeira-parte-terceira-li-terceira-div-terceiro-input {
+    margin-right: 5%
+}
+
+.comentario {
+    display: flex;
+    flex-direction: column;
+}
+
+.opcional {
+    display: flex;
+}
+
+.div-flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-enviar {
+    background-color: #32CD32;
+    color: #FFFAFA;
+}

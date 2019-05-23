@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="main-container">
+        <form [formGroup]="cadastroTurmaMateriaDocente" (ngSubmit)="register()">
+            <ul class="content">
+                <li class="li-flex">
+                  <label class="lbl-segunda-li">Coordenador: </label>
+                  <input class="input-coordenador input-height" placeholder="Nome" type="text" formControlName="coordenador">
+                </li>
+                <li class="primeira-li form-group">
+                  <label>CAE: </label>
+                  <input class="input-primeira-li" type="radio" value="CAE" formControlName="tipoCurso">
+                  <label>CT: </label>
+                  <input class="input-primeira-li" type="radio" value="CT" formControlName="tipoCurso">
+                  <label>FIC: </label>
+                  <input class="input-primeira-li" type="radio" value="FIC" formControlName="tipoCurso">
+                  <label>CST: </label>
+                  <input class="input-primeira-li" type="radio" value="CST" formControlName="tipoCurso">
+                  <label>POS: </label>
+                  <input class="input-primeira-li" type="radio" value="POS" formControlName="tipoCurso">
+                </li>
+                <li class="segunda-li form-group">
+                  <label class="lbl-segunda-li">Título do curso: </label>
+                  <input class="input-height" type="text" formControlName="curso">
+                  <label class="lbl-segunda-li">Turma: </label>
+                  <input class="input-height" type="text" formControlName="turma">
+                  <label class="lbl-segunda-li">Número de alunos: </label>
+                  <input class="input-height" type="text" formControlName="qtdAluno">
+                </li>
+                <li class="terceira-li">
+                  <label class="lbl-margin-left">Matéria</label>
+                  <label class="lbl-margin-right">Docente</label>
+                </li>
+                <li class="materia-docente-li form-group">
+                  <input type="text" placeholder="Matéria" formControlName="materia1">
+                  <input type="text" placeholder="Docente" formControlName="docente1">
+                </li>
+                <li class="materia-docente-li form-group">
+                  <input type="text" placeholder="Matéria" formControlName="materia2">
+                  <input type="text" placeholder="Docente" formControlName="docente2">
+                </li>
+                <li class="materia-docente-li form-group">
+                  <input type="text" placeholder="Matéria" formControlName="materia3">
+                  <input type="text" placeholder="Docente" formControlName="docente3">
+                </li>
+                <li class="materia-docente-li form-group">
+                  <input type="text" placeholder="Matéria" formControlName="materia4">
+                  <input type="text" placeholder="Docente" formControlName="docente4">
+                </li>
+                <li class="materia-docente-li form-group">
+                  <input type="text" placeholder="Matéria" formControlName="materia5">
+                  <input type="text" placeholder="Docente" formControlName="docente5">
+                </li>
+                <li class="materia-docente-li form-group">
+                  <input type="text" placeholder="Matéria" formControlName="materia6">
+                  <input type="text" placeholder="Docente" formControlName="docente6">
+                </li>
+                <li class="materia-docente-li form-group">
+                  <input type="text" placeholder="Matéria" formControlName="materia7">
+                  <input type="text" placeholder="Docente" formControlName="docente7">
+                </li>
+            </ul>
+            <div class="btn-center form-group">
+                <button class="btn btn-cadastro" [disabled]="!cadastroTurmaMateriaDocente.valid" type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

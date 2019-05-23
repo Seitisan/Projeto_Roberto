@@ -1,0 +1,10 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.lbl-codigo {
+    font-size: 5em;
+}

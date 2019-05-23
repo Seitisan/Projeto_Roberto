@@ -1,0 +1,23 @@
+<div class="mainContainer">
+    <h1>AVALIAÇAO DE SATISFAÇÃO</h1>
+    <h4>Participante ( CAE - CT - FIC - CST - POS )</h4>
+    <div class="mensagem">
+        <h4>Este instrumento tem a finalidade de conhecer a sua opinião sobre o curso que você realizou.
+        As informações  prestadas   servirão  exclusivamente para orientar nossas atividades  futuras.
+        Avalie  cada   um   dos  itens  abaixo  segundo   o  nível de  importância  e  nivel  de  satisfação.
+        No  caso  do  item  não  se  aplicar  à  situação  avaliada,  assinale  " X "  na  coluna "  N/A  ".</h4>
+    </div>
+    <div class="container-content">
+        <form class="form-content" [formGroup]="pesquisaCadastroForm" (ngSubmit)="pesquisa()">
+            <div class="div-input form-group">
+                <label>Codigo</label>
+                <input class="input-width" type="text" placeholder="Codigo" formControlName="id">
+                <label>Turma</label>
+                <input class="input-width" type="text" placeholder="Turma" formControlName="turma">
+            </div>
+            <div class="div-flex-center form-group">
+                <button class="btn btn-primary btn_pesquisa" [disabled]="!pesquisaCadastroForm.valid" type="submit">Iniciar Pesquisa</button>
+            </div>
+        </form>
+    </div>
+</div>

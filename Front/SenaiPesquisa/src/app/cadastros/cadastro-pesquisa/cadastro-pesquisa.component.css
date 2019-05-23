@@ -1,0 +1,70 @@
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.li-flex{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1%;
+}
+
+.input-coordenador{
+    margin-left: 2%;
+}
+
+.primeira-li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.input-primeira-li {
+    margin-top: 1.5%;
+}
+
+.segunda-li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.lbl-segunda-li {
+    margin-top: 0.4%;
+}
+
+.input-height {
+    height: 30px;
+}
+
+.terceira-li {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.lbl-margin-left {
+    margin-left: 15%;
+}
+
+.lbl-margin-right {
+    margin-right: 4%;
+}
+
+.materia-docente-li {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.btn-cadastro {
+    background-color: #32CD32;
+    color: #FFFAFA;
+}
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,695 @@
+<div class="container">
+  <div class="cabecalho">
+      Título do curso: {{ cadastroPesquisa.curso }}  Turma: {{cadastroPesquisa.turma}}
+  </div>
+  <div class="container-content">
+    <form class="form-content" [formGroup]="pesquisaForm" (ngSubmit)="register()">
+<!-- | ------------------------------------------------------------------------------------ | 
+     |                                     PRIMEIRA PARTE                                   | 
+     | ------------------------------------------------------------------------------------ | -->
+        <ul class="formulario-primeira-parte" *ngIf="firstPage">
+            <li class="formulario-primeira-parte-primeira-li">
+                <label class="ajuste-left">Nível de importância</label>
+                <label class="ajuste-right">Nível de Satisfação</label>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-primeira-parte-segunda-li-primeira-div">
+                    <label>Alta</label>
+                    <label>Média</label>
+                    <label>Baixa</label>
+                </div>
+                <div>
+                    <label>Itens de Avaliação</label>
+                </div>
+                <div class="formulario-primeira-parte-segunda-li-terceira-div">
+                    <label>Ruim</label>
+                    <label>Regular</label>
+                    <label>Bom</label>
+                    <label>Ótimo</label>
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-terceira-li form-group">
+                <div class="formulario-primeira-parte-terceira-li-primeira-div">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-primeira-div-primeiro-input" type="radio" formControlName="importancia1">
+                    <input value="2" type="radio" formControlName="importancia1">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-primeira-div-terceiro-input" type="radio" formControlName="importancia1">
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-segunda-div">
+                    <label>Limpeza e conservação da sala de aula e da oficina.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta1">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta1">
+                    <input value="2" type="radio" formControlName="resposta1">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta1">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-terceira-li">
+                <div class="formulario-primeira-parte-terceira-li-primeira-div form-group">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-primeira-div-primeiro-input" type="radio" formControlName="importancia2">
+                    <input value="2" type="radio" formControlName="importancia2">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-primeira-div-terceiro-input" type="radio" formControlName="importancia2">
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-segunda-div">
+                    <label>Disponibilidade de equipamentos, máquinas e ferramentas para realização do curso.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta2">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta2">
+                    <input value="2" type="radio" formControlName="resposta2">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta2">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-terceira-li">
+                <div class="formulario-primeira-parte-terceira-li-primeira-div form-group">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-primeira-div-primeiro-input" type="radio" formControlName="importancia3">
+                    <input value="2" type="radio" formControlName="importancia3">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-primeira-div-terceiro-input" type="radio" formControlName="importancia3">
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-segunda-div">
+                    <label>Qualidade de apostila, livros e textos, quanto a impressão e adequação da informação.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta3">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta3">
+                    <input value="2" type="radio" formControlName="resposta3">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta3">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-terceira-li">
+                <div class="formulario-primeira-parte-terceira-li-primeira-div form-group">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-primeira-div-primeiro-input" type="radio" formControlName="importancia4">
+                    <input value="2" type="radio" formControlName="importancia4">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-primeira-div-terceiro-input" type="radio" formControlName="importancia4">
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-segunda-div">
+                    <label>O aprendizado, na teoria e na prática, em relação ao esperado.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta4">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta4">
+                    <input value="2" type="radio" formControlName="resposta4">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta4">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-terceira-li">
+                <div class="formulario-primeira-parte-terceira-li-primeira-div form-group">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-primeira-div-primeiro-input" type="radio" formControlName="importancia5">
+                    <input value="2" type="radio" formControlName="importancia5">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-primeira-div-terceiro-input" type="radio" formControlName="importancia5">
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-segunda-div">
+                    <label>O conteúdo do curso em relação as expectativas.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta5">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta5">
+                    <input value="2" type="radio" formControlName="resposta5">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta5">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-terceira-li">
+                <div class="formulario-primeira-parte-terceira-li-primeira-div form-group">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-primeira-div-primeiro-input" type="radio" formControlName="importancia6">
+                    <input value="2" type="radio" formControlName="importancia6">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-primeira-div-terceiro-input" type="radio" formControlName="importancia6">
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-segunda-div">
+                    <label>Atendimento na recepção / secretaria da Escola.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta6">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta6">
+                    <input value="2" type="radio" formControlName="resposta6">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta6">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-terceira-li">
+                <div class="formulario-primeira-parte-terceira-li-primeira-div form-group">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-primeira-div-primeiro-input" type="radio" formControlName="importancia7">
+                    <input value="2" type="radio" formControlName="importancia7">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-primeira-div-terceiro-input" type="radio" formControlName="importancia7">
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-segunda-div">
+                    <label>Atendimento telefônico da Escola.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta7">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta7">
+                    <input value="2" type="radio" formControlName="resposta7">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta7">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-terceira-li">
+                <div class="formulario-primeira-parte-terceira-li-primeira-div form-group">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-primeira-div-primeiro-input" type="radio" formControlName="importancia8">
+                    <input value="2" type="radio" formControlName="importancia8">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-primeira-div-terceiro-input" type="radio" formControlName="importancia8">
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-segunda-div">
+                    <label>Atendimento na cantina / lanchonete.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta8">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta8">
+                    <input value="2" type="radio" formControlName="resposta8">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta8">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-terceira-li">
+                <div class="formulario-primeira-parte-terceira-li-primeira-div form-group">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-primeira-div-primeiro-input" type="radio" formControlName="importancia9">
+                    <input value="2" type="radio" formControlName="importancia9">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-primeira-div-terceiro-input" type="radio" formControlName="importancia9">
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-segunda-div">
+                    <label>Atendimento da Biblioteca.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta9">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta9">
+                    <input value="2" type="radio" formControlName="resposta9">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta9">
+                </div>
+            </li>
+        </ul>
+<!-- | ------------------------------------------------------------------------------------ | 
+     |                                     SEGUNDA PARTE                                    | 
+     | ------------------------------------------------------------------------------------ | -->
+        <ul class="formulario-primeira-parte" *ngIf="secondPage">
+            <li class="formulario-segunda-parte-primeira-li">
+                <label class="ajuste-left-segunda-parte">Itens de avaliação</label>
+                <label class="ajuste-right-segunda-parte">Nível de Satisfação</label>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-segunda-li-primeira-div">
+                    <label>Matéria</label>
+                    <label>Docente</label>
+                </div>
+                <div>
+                    <label>Cumprimento de horário de aulas.</label>
+                </div>
+                <div class="formulario-primeira-parte-segunda-li-terceira-div">
+                    <label>Ruim</label>
+                    <label>Regular</label>
+                    <label>Bom</label>
+                    <label>Ótimo</label>
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[0].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[0].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta1docente1">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta1docente1">
+                    <input value="2" type="radio" formControlName="resposta1docente1">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta1docente1">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[1].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[1].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta1docente2">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta1docente2">
+                    <input value="2" type="radio" formControlName="resposta1docente2">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta1docente2">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[2].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[2].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta1docente3">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta1docente3">
+                    <input value="2" type="radio" formControlName="resposta1docente3">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta1docente3">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[3].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[3].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta1docente4">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta1docente4">
+                    <input value="2" type="radio" formControlName="resposta1docente4">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta1docente4">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[4].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[4].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta1docente5">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta1docente5">
+                    <input value="2" type="radio" formControlName="resposta1docente5">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta1docente5">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[5].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[5].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta1docente6">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta1docente6">
+                    <input value="2" type="radio" formControlName="resposta1docente6">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta1docente6">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[6].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[6].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta1docente7">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta1docente7">
+                    <input value="2" type="radio" formControlName="resposta1docente7">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta1docente7">
+                </div>
+            </li>
+        </ul>
+<!-- | ------------------------------------------------------------------------------------ | 
+     |                                     TERCEIRA PARTE                                   | 
+     | ------------------------------------------------------------------------------------ | -->
+        <ul class="formulario-primeira-parte" *ngIf="thirdPage">
+            <li class="formulario-segunda-parte-primeira-li">
+                <label class="ajuste-left-segunda-parte">Itens de avaliação</label>
+                <label class="ajuste-right-segunda-parte">Nível de Satisfação</label>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-segunda-li-primeira-div">
+                    <label>Matéria</label>
+                    <label>Docente</label>
+                </div>
+                <div>
+                    <label>Cumprimento dos objetivos proposto para o curso.</label>
+                </div>
+                <div class="formulario-primeira-parte-segunda-li-terceira-div">
+                    <label>Ruim</label>
+                    <label>Regular</label>
+                    <label>Bom</label>
+                    <label>Ótimo</label>
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[0].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[0].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta2docente1">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta2docente1">
+                    <input value="2" type="radio" formControlName="resposta2docente1">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta2docente1">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[1].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[1].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta2docente2">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta2docente2">
+                    <input value="2" type="radio" formControlName="resposta2docente2">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta2docente2">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[2].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[2].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta2docente3">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta2docente3">
+                    <input value="2" type="radio" formControlName="resposta2docente3">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta2docente3">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[3].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[3].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta2docente4">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta2docente4">
+                    <input value="2" type="radio" formControlName="resposta2docente4">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta2docente4">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[4].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[4].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta2docente5">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta2docente5">
+                    <input value="2" type="radio" formControlName="resposta2docente5">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta2docente5">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[5].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[5].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta2docente6">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta2docente6">
+                    <input value="2" type="radio" formControlName="resposta2docente6">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta2docente6">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[6].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[6].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta2docente7">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta2docente7">
+                    <input value="2" type="radio" formControlName="resposta2docente7">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta2docente7">
+                </div>
+            </li>
+        </ul>
+<!-- | ------------------------------------------------------------------------------------ | 
+     |                                     QUARTA PARTE                                     | 
+     | ------------------------------------------------------------------------------------ | -->
+        <ul class="formulario-primeira-parte" *ngIf="fourthPage">
+            <li class="formulario-segunda-parte-primeira-li">
+                <label class="ajuste-left-segunda-parte">Itens de avaliação</label>
+                <label class="ajuste-right-segunda-parte">Nível de Satisfação</label>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-segunda-li-primeira-div">
+                    <label>Matéria</label>
+                    <label>Docente</label>
+                </div>
+                <div>
+                    <label>Preocupação com o aproveitamento dos alunos.</label>
+                </div>
+                <div class="formulario-primeira-parte-segunda-li-terceira-div">
+                    <label>Ruim</label>
+                    <label>Regular</label>
+                    <label>Bom</label>
+                    <label>Ótimo</label>
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[0].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[0].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta3docente1">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta3docente1">
+                    <input value="2" type="radio" formControlName="resposta3docente1">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta3docente1">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[1].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[1].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta3docente2">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta3docente2">
+                    <input value="2" type="radio" formControlName="resposta3docente2">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta3docente2">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[2].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[2].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta3docente3">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta3docente3">
+                    <input value="2" type="radio" formControlName="resposta3docente3">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta3docente3">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[3].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[3].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta3docente4">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta3docente4">
+                    <input value="2" type="radio" formControlName="resposta3docente4">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta3docente4">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[4].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[4].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta3docente5">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta3docente5">
+                    <input value="2" type="radio" formControlName="resposta3docente5">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta3docente5">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[5].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[5].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta3docente6">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta3docente6">
+                    <input value="2" type="radio" formControlName="resposta3docente6">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta3docente6">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[6].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[6].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta3docente7">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta3docente7">
+                    <input value="2" type="radio" formControlName="resposta3docente7">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta3docente7">
+                </div>
+            </li>
+        </ul>
+<!-- | ------------------------------------------------------------------------------------ | 
+     |                                     QUINTA PARTE                                     | 
+     | ------------------------------------------------------------------------------------ | -->
+        <ul class="formulario-primeira-parte" *ngIf="fifthPage">
+            <li class="formulario-segunda-parte-primeira-li">
+                <label class="ajuste-left-segunda-parte">Itens de avaliação</label>
+                <label class="ajuste-right-segunda-parte">Nível de Satisfação</label>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-segunda-li-primeira-div">
+                    <label>Matéria</label>
+                    <label>Docente</label>
+                </div>
+                <div>
+                    <label>Dominio sobre os assuntos tratados.</label>
+                </div>
+                <div class="formulario-primeira-parte-segunda-li-terceira-div">
+                    <label>Ruim</label>
+                    <label>Regular</label>
+                    <label>Bom</label>
+                    <label>Ótimo</label>
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[0].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[0].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta4docente1">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta4docente1">
+                    <input value="2" type="radio" formControlName="resposta4docente1">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta4docente1">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[1].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[1].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta4docente2">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta4docente2">
+                    <input value="2" type="radio" formControlName="resposta4docente2">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta4docente2">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[2].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[2].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta4docente3">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta4docente3">
+                    <input value="2" type="radio" formControlName="resposta4docente3">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta4docente3">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[3].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[3].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta4docente4">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta4docente4">
+                    <input value="2" type="radio" formControlName="resposta4docente4">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta4docente4">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[4].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[4].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta4docente5">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta4docente5">
+                    <input value="2" type="radio" formControlName="resposta4docente5">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta4docente5">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[5].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[5].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta4docente6">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta4docente6">
+                    <input value="2" type="radio" formControlName="resposta4docente6">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta4docente6">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label class="ajuste-left-4">{{ cadastroPesquisa.docentes[6].materia}}</label>
+                    <label class="ajuste-right-3">{{ cadastroPesquisa.docentes[6].nomeDocente}}</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta4docente7">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta4docente7">
+                    <input value="2" type="radio" formControlName="resposta4docente7">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta4docente7">
+                </div>
+            </li>
+        </ul>
+<!-- | ------------------------------------------------------------------------------------ | 
+     |                                     ULTIMA PARTE                                     | 
+     | ------------------------------------------------------------------------------------ | -->
+        <ul class="formulario-primeira-parte" *ngIf="lastPage">
+            <li class="formulario-last-parte-primeira-li">
+                <label class="ajuste-right-segunda-parte">Nível de Satisfação</label>
+            </li>
+            <li class="formulario-last-parte-segunda-li">
+                <div class="formulario-primeira-parte-segunda-li-terceira-div">
+                    <label>Ruim</label>
+                    <label>Regular</label>
+                    <label>Bom</label>
+                    <label>Ótimo</label>
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label>Coordenação (Nome): </label>
+                    <label>{{ cadastroPesquisa.coordenador }}</label>
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label>Abertura para comunicação.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta1coordenador">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta1coordenador">
+                    <input value="2" type="radio" formControlName="resposta1coordenador">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta1coordenador">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label>Atenção dispensada quando procurado.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta2coordenador">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta2coordenador">
+                    <input value="2" type="radio" formControlName="resposta2coordenador">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta2coordenador">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label>Cordialidade e respeito com alunos.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta3coordenador">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta3coordenador">
+                    <input value="2" type="radio" formControlName="resposta3coordenador">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta3coordenador">
+                </div>
+            </li>
+            <li class="formulario-primeira-parte-segunda-li">
+                <div class="formulario-segunda-parte-terceira-li-primeira-div">
+                    <label>Efetividade na solução e orientação quando solicitado.</label>
+                </div>
+                <div class="formulario-primeira-parte-terceira-li-terceira-div form-group">
+                    <input value="4" class="formulario-primeira-parte-terceira-li-terceira-div-primeiro-input" type="radio" formControlName="resposta4coordenador">
+                    <input value="3" class="formulario-primeira-parte-terceira-li-terceira-div-segundo-input" type="radio" formControlName="resposta4coordenador">
+                    <input value="2" type="radio" formControlName="resposta4coordenador">
+                    <input value="1" class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input" type="radio" formControlName="resposta4coordenador">
+                </div>
+            </li>
+            <li class="comentario">
+                <div>
+                    <label>Comentário, reclamações e sugestão</label>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" cols="50" class="form-control" formControlName="comentario"></textarea>
+                </div>
+            </li>
+            <li class="opcional form-group">
+                <label class="formulario-primeira-parte-terceira-li-terceira-div-terceiro-input">Nome aluno (opcional)</label>
+                <input class="form-control" type="text" formControlName="aluno">
+            </li>
+        </ul>
+        <div class="div-flex-space-between">
+        <label class="adaptation-lbl" (click)="anteriorPagina()">Anterior</label>
+        <label class="adaptation-lbl proximo-btn" (click)="proximaPagina()" *ngIf="!lastPage">Próximo</label>
+        </div>
+        <div class="div-flex-center form-group" *ngIf="lastPage">
+            <button class="btn btn-enviar" [disabled]="!pesquisaForm.valid" type="submit">Enviar</button>
+        </div>
+    </form>
+  </div>
+</div>

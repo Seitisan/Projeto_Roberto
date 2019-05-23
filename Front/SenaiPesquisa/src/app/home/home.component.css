@@ -1,0 +1,41 @@
+h1, h4 {
+    font-weight: bold;
+}
+
+h4 {
+    line-height: 2.5;
+}
+
+.mainContainer {
+    text-align: center;
+}
+
+.container-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-width{
+    width: 10%;
+    margin: 0 auto;
+}
+
+.mensagem {
+    width: 51%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.btn_pesquisa {
+    margin-top: 2%;
+    width: 200px;
+    font-weight: bold;
+}
