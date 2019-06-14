@@ -184,7 +184,7 @@ export class PesquisaComponent implements OnInit {
         this.cadastroPesquisa.coordenador = res.coordenador;
         this.cadastroPesquisa.docentes = res.docentes;
       }, error => {
-          this.alertify.error('Código e/ou turma incorretos');
+          this.alertify.error('Cรณdigo e/ou turma incorretos');
           this.router.navigate(['']);
         });
   }

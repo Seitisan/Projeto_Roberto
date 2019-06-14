@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="container-content">
+    <div class="mensagem">
+      <p>Gera csv da pesquisa por turma</p>
+    </div>
+    <form class="form-content" [formGroup]="geraCSV" (ngSubmit)="recupera()">
+      <div class="div-input form-group">
+        <label class="lbl">Codigo da pesquisa</label>
+        <input class="input-width" type="text" placeholder="Codigo" formControlName="id">
+      </div>
+      <div class="div-flex-center form-group">
+          <button class="btn btn-primary btn_pesquisa" [disabled]="!geraCSV.valid" type="submit">Gera CSV</button>
+      </div>
+    </form>
+  </div>
+</div>

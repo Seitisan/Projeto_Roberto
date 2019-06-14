@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using API.Data.IRepository;
 using API.DTOS;
 using API.Models;
@@ -53,7 +54,7 @@ namespace API.Controllers
         [HttpGet("cadastro")]
         public async Task<IActionResult> GetCadastroPesquisa(int id, string turma){
 
-            var cadastroPesquisa = await _repo.GetCadastrarPesquisa(id, turma);
+            CadastroPesquisa cadastroPesquisa = await _repo.GetCadastrarPesquisa(id, turma);
 
             if(cadastroPesquisa==null){
                 return BadRequest();
@@ -63,5 +64,19 @@ namespace API.Controllers
 
             return Ok(cadastroPesquisaToReturn);
         }
+
+        [HttpGet("resultado")]
+        [Produces("text/csv")]
+        public async Task<FileResult> GetPesquisa(int id){
+
+            CadastroPesquisa cadastroPesquisa = await _repo.GetCadastrarPesquisa(id);
+
+            List<Pesquisa> listaPesquisa = await _repo.GetPesquisas(id);
+
+            byte[] arquivo = _repo.GeraCSV(cadastroPesquisa, listaPesquisa);
+
+            return File(arquivo, "text/csv", "Pesquisa_Turma_" + cadastroPesquisa.Turma);
+        }
+
     }
 }

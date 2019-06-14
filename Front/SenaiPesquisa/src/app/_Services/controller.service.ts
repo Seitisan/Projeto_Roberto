@@ -21,4 +21,8 @@ constructor(private http: HttpClient) { }
   getCadastroPesquisa(id: number, turma: string) {
     return this.http.get(this.baseUrl + '/cadastro?id=' + id + '&turma=' + turma);
   }
+
+  geraCSV(id: number) {
+    return this.http.get(this.baseUrl + '/resultado?id=' + id, { responseType: 'blob' as 'json' });
+  }
 }

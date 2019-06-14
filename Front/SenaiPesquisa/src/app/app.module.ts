@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastroPesquisaSucessoComponent } from './cadastros/cadastro-pesquisa-sucesso/cadastro-pesquisa-sucesso.component';
 import { CadastroPesquisaComponent } from './cadastros/cadastro-pesquisa/cadastro-pesquisa.component';
 import { AlertifyService } from './_Services/alertify.service';
+import { PesquisaResultadoComponent } from './pesquisaResultado/pesquisaResultado.component';
 
 @NgModule({
    declarations: [
@@ -20,7 +21,8 @@ import { AlertifyService } from './_Services/alertify.service';
       NavComponent,
       PesquisaComponent,
       CadastroPesquisaComponent,
-      CadastroPesquisaSucessoComponent
+      CadastroPesquisaSucessoComponent,
+      PesquisaResultadoComponent
    ],
    imports: [
       BrowserModule,
